@@ -35,7 +35,8 @@ export async function POST(req: NextRequest) {
 		return NextResponse.json(
 			{
 				error: 'Failed to send email',
-				message: error instanceof Error ? error.message : 'An unknown error occurred',
+				// message: error instanceof Error ? error.message : 'An unknown error occurred',
+				message: 'An unknown error occurred',
 				stack: error instanceof Error ? error.stack : null,
 			},
 			{ status: 500 }
