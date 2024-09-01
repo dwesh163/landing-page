@@ -25,11 +25,14 @@ export async function sendEmail(emails: string[], from: string, subject: string,
 		html: htmlContent,
 	};
 
-	transporter.sendMail(mailOptions, (error: Error | null) => {
-		if (error) {
-			throw error;
-		} else {
-			console.log('E-mail sent at:', new Date());
-		}
+	return new Promise<void>((resolve, reject) => {
+		transporter.sendMail(mailOptions, (error: Error | null) => {
+			if (error) {
+				return reject(new Error(error.message));
+			} else {
+				console.log('E-mail sent at:', new Date());
+				resolve();
+			}
+		});
 	});
 }
