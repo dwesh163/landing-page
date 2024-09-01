@@ -46,6 +46,8 @@ export default function Form() {
 			}
 
 			setSuccessMessage('Contact form submitted successfully!');
+			setFormData({ name: '', email: '', message: '' });
+			setTimeout(() => setSuccessMessage(''), 5000);
 		} catch (error) {
 			if (error instanceof ZodError) {
 				const formattedErrors: FormErrors = error.errors.reduce((acc, curr) => {
