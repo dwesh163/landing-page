@@ -33,7 +33,7 @@ export default function Form() {
 		try {
 			contactFormSchema.parse(formData);
 
-			const response = await fetch('/api/contact', {
+			const response = await fetch('/api/mail', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify(formData),
@@ -44,7 +44,7 @@ export default function Form() {
 				throw new Error(errorData.message || 'Failed to submit form');
 			}
 
-			setSuccessMessage('Form submitted successfully!');
+			setSuccessMessage('Contact form submitted successfully!');
 		} catch (error) {
 			if (error instanceof ZodError) {
 				const formattedErrors: FormErrors = error.errors.reduce((acc, curr) => {
