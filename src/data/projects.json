@@ -1,14 +1,50 @@
 [
     {
         "id": 1,
-        "title": "Project 1",
-        "description": "This is project 1",
-        "link": "http://www.google.com"
+        "title": "Kooked Music",
+        "description": "A web application to listen to music",
+        "link": "https://musics.kooked.ch"
     },
     {
         "id": 2,
-        "title": "Project 2",
-        "description": "This is project 2",
-        "link": "http://www.google.ch"
+        "title": "Kooked Pictures",
+        "description": "A web application to view and share pictures",
+        "link": "https://pictures.kooked.ch"
+    },
+    {
+        "id": 3,
+        "title": "Grafana",
+        "description": "Monitoring and observability platform",
+        "link": "https://grafana.kooked.ch"
+    },
+    {
+        "id": 4,
+        "title": "Traefik",
+        "description": "The Cloud Native Edge Router",
+        "link": "https://grafana.kooked.ch"
+    },
+    {
+        "id": 5,
+        "title": "Password Game",
+        "description": "A small game to guess the password",
+        "link": "https://password.kooked.ch"
+    },
+    {
+        "id": 6,
+        "title": "Nodered",
+        "description": "A flow-based development tool for visual programming",
+        "link": "https://nodered.kooked.ch"
+    },
+    {
+        "id": 7,
+        "title": "Moodle",
+        "description": "A learning platform",
+        "link": "https://moodle.kooked.ch"
+    },
+    {
+        "id": 8,
+        "title": "Alertmanager",
+        "description": "Manage and send alerts",
+        "link": "https://am.kooked.ch"
     }
 ]
