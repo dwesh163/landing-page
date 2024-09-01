@@ -27,7 +27,7 @@ export async function sendEmail(emails: string[], from: string, subject: string,
 
 	transporter.sendMail(mailOptions, (error: Error | null) => {
 		if (error) {
-			console.error('Error sending email:', error);
+			throw error;
 		} else {
 			console.log('E-mail sent at:', new Date());
 		}
