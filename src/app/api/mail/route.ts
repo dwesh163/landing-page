@@ -2,6 +2,11 @@ import { NextRequest, NextResponse } from 'next/server';
 import { sendEmail } from '@/lib/email';
 import { z } from 'zod';
 
+// Helper function to escape HTML
+const escapeHtml = (unsafe: string) => {
+	return unsafe.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
+};
+
 const contactFormSchema = z.object({
 	name: z.string().min(1, 'Name is required'),
 	email: z.string().email('Invalid email address'),
@@ -14,12 +19,17 @@ export async function POST(req: NextRequest) {
 	try {
 		const result = contactFormSchema.parse(body);
 
+		// Sanitize input to prevent script injection
+		const sanitizedMessage = escapeHtml(result.message);
+		const sanitizedName = escapeHtml(result.name);
+		const sanitizedEmail = escapeHtml(result.email);
+
 		const htmlContent = `
-			<h1>New Contact Request</h1>
-			<p><strong>Name:</strong> ${result.name}</p>
-			<p><strong>Email:</strong> ${result.email}</p>
-			<p><strong>Message:</strong> ${result.message}</p>
-		`;
+      <h1>New Contact Request</h1>
+      <p><strong>Name:</strong> ${sanitizedName}</p>
+      <p><strong>Email:</strong> ${sanitizedEmail}</p>
+      <p><strong>Message:</strong> ${sanitizedMessage}</p>
+    `;
 
 		const emails = process.env.CONTACT_USERS?.split(',') || [];
 		const from = process.env.MAIL_USERNAME || '';
@@ -35,7 +45,6 @@ export async function POST(req: NextRequest) {
 		return NextResponse.json(
 			{
 				error: 'Failed to send email',
-				// message: error instanceof Error ? error.message : 'An unknown error occurred',
 				message: 'An unknown error occurred',
 				stack: error instanceof Error ? error.stack : null,
 			},
