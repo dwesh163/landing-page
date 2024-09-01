@@ -1,12 +1,9 @@
 import Link from 'next/link';
 import { Card } from '@/components/ui/card';
-import { Label } from '@/components/ui/label';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Button } from '@/components/ui/button';
 import { MoveRight } from 'lucide-react';
 import { Project } from '@/types/project';
 import fs from 'fs';
+import Form from '@/components/form';
 
 export default function Home() {
 	const projets: Project[] = JSON.parse(fs.readFileSync('src/data/projects.json', 'utf8'));
@@ -68,23 +65,7 @@ export default function Home() {
 							<h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Contact Us</h2>
 							<p className="max-w-[600px] mx-auto text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">Have a question? Fill out the form below and we'll get back to you.</p>
 						</div>
-						<form className="mx-auto max-w-md space-y-4">
-							<div className="grid gap-2">
-								<Label htmlFor="name">Name</Label>
-								<Input id="name" placeholder="Enter your name" />
-							</div>
-							<div className="grid gap-2">
-								<Label htmlFor="email">Email</Label>
-								<Input id="email" type="email" placeholder="Enter your email" />
-							</div>
-							<div className="grid gap-2">
-								<Label htmlFor="message">Message</Label>
-								<Textarea id="message" placeholder="Enter your message" className="min-h-[120px]" />
-							</div>
-							<Button type="submit" className="w-full">
-								Submit
-							</Button>
-						</form>
+						<Form />
 					</div>
 				</section>
 			</main>
