@@ -24,15 +24,15 @@ export async function POST(req: NextRequest) {
 
 	return NextResponse.json({ emails, from, htmlContent });
 
-	try {
-		await sendEmail(emails, from, 'KOOKED.ch - Contact', htmlContent);
-		return NextResponse.json({ message: 'Email sent' });
-	} catch (error) {
-		if (error instanceof z.ZodError) {
-			return NextResponse.json({ error: 'Validation failed', errors: error.errors }, { status: 400 });
-		}
-		return NextResponse.json({ error: 'Failed to send email' }, { status: 500 });
-	}
+	// try {
+	// 	await sendEmail(emails, from, 'KOOKED.ch - Contact', htmlContent);
+	// 	return NextResponse.json({ message: 'Email sent' });
+	// } catch (error) {
+	// 	if (error instanceof z.ZodError) {
+	// 		return NextResponse.json({ error: 'Validation failed', errors: error.errors }, { status: 400 });
+	// 	}
+	// 	return NextResponse.json({ error: 'Failed to send email' }, { status: 500 });
+	// }
 }
 
 export async function GET() {
