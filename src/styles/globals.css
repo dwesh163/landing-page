@@ -73,3 +73,10 @@
   clip-path: polygon(100% 74%, 0% 100%, 100% 100%);
   z-index: 1;
 }
+
+@media screen and (max-width: 1200px) {
+  .inclined-separator::after {
+    height: 80px;
+  }
+
+}
