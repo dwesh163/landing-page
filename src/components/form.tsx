@@ -41,6 +41,7 @@ export default function Form() {
 
 			if (!response.ok) {
 				const errorData = await response.json();
+				console.log(errorData);
 				throw new Error(errorData.message || 'Failed to submit form');
 			}
 

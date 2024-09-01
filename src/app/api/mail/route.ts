@@ -22,6 +22,8 @@ export async function POST(req: NextRequest) {
 	const emails = process.env.CONTACT_USERS?.split(',') || [];
 	const from = process.env.MAIL_USERNAME || '';
 
+	return NextResponse.json({ emails, from, htmlContent });
+
 	try {
 		await sendEmail(emails, from, 'KOOKED.ch - Contact', htmlContent);
 		return NextResponse.json({ message: 'Email sent' });
