@@ -29,7 +29,7 @@ export async function sendEmail(emails: string[], from: string, subject: string,
 		if (error) {
 			console.error('Error sending email:', error);
 		} else {
-			console.log('E-mail sent - to:', emails.join(', '));
+			console.log('E-mail sent at:', new Date());
 		}
 	});
 }
