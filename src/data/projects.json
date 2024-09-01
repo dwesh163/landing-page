@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "title": "Project 1",
+        "description": "This is project 1",
+        "link": "http://www.google.com"
+    },
+    {
+        "id": 2,
+        "title": "Project 2",
+        "description": "This is project 2",
+        "link": "http://www.google.ch"
+    }
+]
