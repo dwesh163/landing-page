@@ -4,7 +4,7 @@ import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
-import { z } from 'zod';
+import { z, ZodError } from 'zod';
 
 const contactFormSchema = z.object({
 	name: z.string().min(1, 'Name is required'),
@@ -12,10 +12,13 @@ const contactFormSchema = z.object({
 	message: z.string().min(1, 'Message is required'),
 });
 
+type FormData = z.infer<typeof contactFormSchema>;
+type FormErrors = Partial<Record<keyof FormData, string>> & { form?: string };
+
 export default function Form() {
-	const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-	const [errors, setErrors] = useState({});
-	const [successMessage, setSuccessMessage] = useState('');
+	const [formData, setFormData] = useState<FormData>({ name: '', email: '', message: '' });
+	const [errors, setErrors] = useState<FormErrors>({});
+	const [successMessage, setSuccessMessage] = useState<string>('');
 
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
 		setFormData({ ...formData, [e.target.id]: e.target.value });
@@ -43,11 +46,11 @@ export default function Form() {
 
 			setSuccessMessage('Form submitted successfully!');
 		} catch (error) {
-			if (error instanceof z.ZodError) {
-				const formattedErrors = error.errors.reduce((acc, curr) => {
-					acc[curr.path[0]] = curr.message;
+			if (error instanceof ZodError) {
+				const formattedErrors: FormErrors = error.errors.reduce((acc, curr) => {
+					acc[curr.path[0] as keyof FormData] = curr.message;
 					return acc;
-				}, {});
+				}, {} as FormErrors);
 				setErrors(formattedErrors);
 			} else if (error instanceof Error) {
 				setErrors({ form: error.message });
