@@ -1,6 +1,6 @@
 import nodemailer, { Transporter, SendMailOptions } from 'nodemailer';
 
-export async function sendEmail(email: string, from: string, subject: string, htmlContent: string): Promise<void> {
+export async function sendEmail(emails: string[], from: string, subject: string, htmlContent: string): Promise<void> {
 	const secret = {
 		user: process.env.MAIL_USERNAME || '',
 		pass: process.env.MAIL_PASSWORD || '',
@@ -20,7 +20,7 @@ export async function sendEmail(email: string, from: string, subject: string, ht
 
 	const mailOptions: SendMailOptions = {
 		from: secret.user,
-		to: email,
+		to: emails,
 		subject: secret.subject,
 		html: htmlContent,
 	};
@@ -29,7 +29,7 @@ export async function sendEmail(email: string, from: string, subject: string, ht
 		if (error) {
 			console.error('Error sending email:', error);
 		} else {
-			console.log('E-mail sent');
+			console.log('E-mail sent - to:', emails.join(', '));
 		}
 	});
 }
