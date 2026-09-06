@@ -11,31 +11,45 @@
   "Projects": {
     "heading": "Nos derniers projets",
     "subheading": "Une sélection des applications et services que nous concevons, hébergeons et maintenons.",
-    "viewProject": "Voir le projet",
     "items": {
+      "kooked": {
+        "description": "Le site principal de Kooked, qui présente ce que nous construisons."
+      },
       "music": {
         "description": "Une application web auto-hébergée pour écouter de la musique."
       },
       "pictures": {
         "description": "Une application web auto-hébergée pour voir et partager des photos."
       },
-      "grafana": {
-        "description": "Tableaux de bord de monitoring et d'observabilité pour notre infrastructure."
-      },
       "md2pdf": {
         "description": "Convertit des documents Markdown en PDF soignés."
-      },
-      "password-game": {
-        "description": "Un petit jeu qui vous met au défi de deviner le mot de passe."
-      },
-      "uptime-kuma": {
-        "description": "Surveillance de la disponibilité de nos services et side-projects."
       },
       "url-shortener": {
         "description": "Un raccourcisseur d'URL simple et rapide."
       },
       "api-ict": {
         "description": "Une API développée pour le module ICT."
+      },
+      "balladur": {
+        "description": "Une application de gestion pour les maîtres du jeu de Donjons et Dragons."
+      },
+      "ctfd": {
+        "description": "Une plateforme open-source pour héberger des compétitions Capture The Flag."
+      },
+      "n8n": {
+        "description": "Un outil d'automatisation de workflows pour connecter applications et services."
+      },
+      "node-red": {
+        "description": "Un outil de programmation par flux pour relier appareils, API et services."
+      },
+      "projects": {
+        "description": "Un logiciel de gestion de projets pour planifier et suivre notre travail."
+      },
+      "rahoot": {
+        "description": "Un jeu de quiz open-source façon Kahoot pour des sessions de trivia en direct."
+      },
+      "odoo": {
+        "description": "Une suite tout-en-un pour gérer nos opérations."
       },
       "moodle": {
         "description": "Instance Moodle pour l'équipe Kooked."

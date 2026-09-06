@@ -11,31 +11,45 @@
   "Projects": {
     "heading": "Our latest projects",
     "subheading": "A selection of the apps and services we design, host and maintain.",
-    "viewProject": "View project",
     "items": {
+      "kooked": {
+        "description": "The main Kooked website, showcasing what we build."
+      },
       "music": {
         "description": "A self-hosted web app for listening to music."
       },
       "pictures": {
         "description": "A self-hosted web app for viewing and sharing pictures."
       },
-      "grafana": {
-        "description": "Monitoring and observability dashboards for our infrastructure."
-      },
       "md2pdf": {
         "description": "Converts Markdown documents to polished PDFs."
-      },
-      "password-game": {
-        "description": "A small game that challenges you to guess the password."
-      },
-      "uptime-kuma": {
-        "description": "Uptime monitoring for our services and side projects."
       },
       "url-shortener": {
         "description": "A simple, fast URL shortener."
       },
       "api-ict": {
         "description": "An API built for the ICT module."
+      },
+      "balladur": {
+        "description": "A management app for Dungeons & Dragons game masters."
+      },
+      "ctfd": {
+        "description": "An open-source platform for hosting Capture The Flag competitions."
+      },
+      "n8n": {
+        "description": "A workflow automation tool for connecting apps and services."
+      },
+      "node-red": {
+        "description": "A flow-based tool for wiring together devices, APIs and services."
+      },
+      "projects": {
+        "description": "Project management software for planning and tracking our work."
+      },
+      "rahoot": {
+        "description": "An open-source, Kahoot-like quiz game for live trivia sessions."
+      },
+      "odoo": {
+        "description": "An all-in-one suite for managing our business operations."
       },
       "moodle": {
         "description": "Moodle instance for the Kooked team."
