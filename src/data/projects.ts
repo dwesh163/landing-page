@@ -14,7 +14,7 @@ export const projects: Project[] = [
   { id: "balladur", title: "Balladur", link: "https://balladur.kooked.app" },
   { id: "ctfd", title: "CTFd", link: "https://ctfd.kooked.ch" },
   { id: "n8n", title: "N8N", link: "https://n8n.kooked.ch" },
-  { id: "node-red", title: "Node-RED", link: "https://nodered.kooked.ch" },
+  { id: "node-red", title: "Node-RED", link: "https://node-red.kooked.ch" },
   { id: "projects", title: "OpenProjects", link: "https://projects.kooked.ch" },
   { id: "rahoot", title: "Rahoot", link: "https://rahoot.kooked.ch" },
   { id: "odoo", title: "Odoo", link: "https://odoo.kooked.ch" },
